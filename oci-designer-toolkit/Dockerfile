@@ -3,7 +3,7 @@
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 
 FROM oraclelinux:8
-ARG BRANCH=master
+ARG BRANCH=main
 LABEL "provider"="Oracle" \
       "issues"="https://github.com/ajithy/okit/issues" \
       "version"="0.69.0" \
@@ -44,6 +44,7 @@ RUN yum install -y \
  && echo '  StrictHostKeyChecking no' >> /etc/ssh/ssh_config \
  && echo '  UserKnownHostsFile=/dev/null' >> /etc/ssh/ssh_config \
 # Upgrade pip
+ && python3 -m pip install --user
  && python3 -m pip install --upgrade pip \
 # Create Workspace
  && mkdir -p ${OKIT_GITHUB_DIR} \
