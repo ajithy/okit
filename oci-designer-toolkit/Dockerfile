@@ -44,7 +44,6 @@ RUN yum install -y \
  && echo '  StrictHostKeyChecking no' >> /etc/ssh/ssh_config \
  && echo '  UserKnownHostsFile=/dev/null' >> /etc/ssh/ssh_config \
 # Upgrade pip
- && python3 -m pip install --user \
  && python3 -m pip install --upgrade pip \
 # Create Workspace
  && mkdir -p ${OKIT_GITHUB_DIR} \
