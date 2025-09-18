@@ -5,7 +5,7 @@
 FROM oraclelinux:8
 ARG BRANCH=master
 LABEL "provider"="Oracle" \
-      "issues"="https://github.com/oracle/oci-designer-toolkit/issues" \
+      "issues"="https://github.com/ajithy/okit/issues" \
       "version"="0.69.0" \
       "description"="OKIT Web Server Container." \
       "copyright"="Copyright (c) 2020, 2024, Oracle and/or its affiliates."
@@ -50,7 +50,7 @@ RUN yum install -y \
  && echo "Branch: $BRANCH" \
  && git clone --branch $BRANCH --single-branch \
             --config core.autocrlf=input \ 
-            https://github.com/oracle/oci-designer-toolkit.git ${OKIT_GITHUB_DIR}/oci-designer-toolkit \
+            https://github.com/ajithy/okit.git ${OKIT_GITHUB_DIR}/oci-designer-toolkit \
  && mkdir -p ${OKIT_DIR}/{git,local,log,instance/git,instance/local,instance/templates/user,workspace,ssl} \
  && mkdir -p /root/bin \
  && ln -sv ${OKIT_GITHUB_DIR}/oci-designer-toolkit/okitclassic/config ${OKIT_DIR}/config \
